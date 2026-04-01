@@ -1,8 +1,0 @@
-{"name":"Maya","email":"maya@yoga.local","role":"instructor","_id":"71jvNgiONup1w5vS"}
-{"name":"Nicholas Healing","email":"nicholas@student.local","password":"$2b$10$TP7sUWNINk2R97j9hjWGyuCI8Khk.x0oPBX3CVhq/X/Qcv1Fp8VR2","role":"student","_id":"XlOVmFaFi8PAqgii"}
-{"name":"Alice","email":"alice@yoga.local","password":"$2b$10$41Dtwv7ZGc2y1K6MiDmjteGya1K3WHO3xhMg4miBKq393JImH1gPu","role":"student","_id":"fxAFfi3Tp61SYcC7"}
-{"name":"Fiona","email":"fiona@student.local","password":"$2b$10$9wvbfPxhBfKncOG9aYuUW.Y21M2taxcWuR2hOFxcNlmaLoRTB3rMS","role":"student","_id":"ljc0PTWu5so78Z6d"}
-{"name":"Studio Admin","email":"organiser@yoga.local","password":"$2b$10$wYwqCwUmjv3hYslVwbQZBOWrcVorsicbbm4OqsbVKVr.29HVtgjcC","role":"organiser","_id":"oWatLbvXx0ZVpXFK"}
-{"name":"Sarah","email":"sarah@yoga.local","role":"instructor","_id":"uAEhcvmdpzuAaDEC"}
-{"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}
-{"$$indexCreated":{"fieldName":"email","unique":true}}

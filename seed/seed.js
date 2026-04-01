@@ -54,7 +54,7 @@ async function createWeekendWorkshop() {
   });
   const course = await CourseModel.create({
     title: "Spring Mindfulness Retreat",
-    level: "beginner",
+    level: "intermediate",
     type: "WEEKEND_WORKSHOP",
     allowDropIn: false,
     startDate: "2026-05-09",

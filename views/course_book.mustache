@@ -1,0 +1,43 @@
+{{> head}}
+{{> header}}
+
+<article>
+  <h1>Book: {{course.title}}</h1>
+  <p class="muted">
+    Level: {{course.level}} &bull; Type: {{course.type}}
+    {{#course.allowDropIn}}&bull; Drop-in available{{/course.allowDropIn}}
+  </p>
+  <p>{{course.description}}</p>
+  <p class="muted">Dates: {{course.startDate}} &ndash; {{course.endDate}}</p>
+
+  {{#errors}}
+  <div class="alert error" role="alert" aria-live="assertive">
+    <ul>
+      {{#list}}
+      <li>{{.}}</li>
+      {{/list}}
+    </ul>
+  </div>
+  {{/errors}}
+
+  <form method="post" action="/courses/{{course.id}}/book">
+    <input type="hidden" name="userId" value="{{user._id}}">
+
+    <fieldset>
+      <legend>Booking summary</legend>
+      <p>This booking reserves a seat across <strong>{{sessionsCount}}</strong> sessions:</p>
+      <ul class="muted">
+        {{#sessions}}
+        <li>{{start}} ({{remaining}} places left)</li>
+        {{/sessions}}
+      </ul>
+    </fieldset>
+
+    <div class="actions">
+      <button class="btn primary" type="submit">Confirm Course Booking</button>
+      <a href="/courses/{{course.id}}" class="btn">Cancel</a>
+    </div>
+  </form>
+</article>
+
+{{> footer}}

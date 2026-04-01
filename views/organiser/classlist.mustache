@@ -1,0 +1,33 @@
+{{> head}}
+{{> header}}
+
+<h1>Class List: {{course.title}}</h1>
+<a href="/organiser" class="btn" style="margin-bottom:1rem;">← Back to Dashboard</a>
+
+<table class="table" style="width:100%; border-collapse:collapse;">
+  <thead>
+    <tr>
+      <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #ddd;">Name</th>
+      <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #ddd;">Email</th>
+      <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #ddd;">Booking Type</th>
+      <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #ddd;">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#participants}}
+    <tr>
+      <td style="padding:0.5rem;">{{name}}</td>
+      <td style="padding:0.5rem;">{{email}}</td>
+      <td style="padding:0.5rem;">{{type}}</td>
+      <td style="padding:0.5rem;">{{status}}</td>
+    </tr>
+    {{/participants}}
+    {{^participants}}
+    <tr>
+      <td colspan="4" style="padding:0.5rem;">No bookings for this course yet.</td>
+    </tr>
+    {{/participants}}
+  </tbody>
+</table>
+
+{{> footer}}

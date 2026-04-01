@@ -1,0 +1,32 @@
+{{> head}}
+{{> header}}
+
+<h1>Add Organiser</h1>
+
+{{#error}}
+<div class="alert error">{{error}}</div>
+{{/error}}
+
+<form method="post" action="/organiser/users/new">
+  <div class="field">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div class="field">
+    <label for="pass">Password (min 8 characters)</label>
+    <input type="password" id="pass" name="pass" minlength="8" required>
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="btn primary">Create Organiser</button>
+    <a href="/organiser/users" class="btn">Cancel</a>
+  </div>
+</form>
+
+{{> footer}}

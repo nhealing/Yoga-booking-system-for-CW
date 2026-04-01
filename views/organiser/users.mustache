@@ -1,0 +1,38 @@
+{{> head}}
+{{> header}}
+
+<h1>Manage Users</h1>
+
+<div class="actions" style="margin-bottom:1rem;">
+  <a href="/organiser/users/new" class="btn primary">+ Add Organiser</a>
+  <a href="/organiser" class="btn">← Dashboard</a>
+</div>
+
+<table class="table" style="width:100%; border-collapse:collapse;">
+  <thead>
+    <tr>
+      <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #ddd;">Name</th>
+      <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #ddd;">Email</th>
+      <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #ddd;">Role</th>
+      <th style="text-align:left; padding:0.5rem; border-bottom:1px solid #ddd;"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#users}}
+    <tr>
+      <td style="padding:0.5rem;">{{name}}</td>
+      <td style="padding:0.5rem;">{{email}}</td>
+      <td style="padding:0.5rem;">{{role}}</td>
+      <td style="padding:0.5rem;">
+        {{^isSelf}}
+        <form method="post" action="/organiser/users/{{id}}/delete" style="display:inline">
+          <button type="submit" class="btn" onclick="return confirm('Delete this user?')">Delete</button>
+        </form>
+        {{/isSelf}}
+      </td>
+    </tr>
+    {{/users}}
+  </tbody>
+</table>
+
+{{> footer}}

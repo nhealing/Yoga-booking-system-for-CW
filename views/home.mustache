@@ -1,0 +1,25 @@
+{{> head}}
+{{> header}}
+
+<h1>Upcoming Courses</h1>
+
+<div class="cards">
+  {{#courses}}
+  <article class="card">
+    <h2><a href="/courses/{{id}}">{{title}}</a></h2>
+    <p class="muted">
+      Level: {{level}} &bull; Type: {{type}} {{#allowDropIn}}&bull; Drop-in OK{{/allowDropIn}}
+    </p>
+    <p>{{description}}</p>
+    <p class="muted">Dates: {{startDate}} &ndash; {{endDate}}</p>
+    <p class="muted">Next session: {{nextSession}} &bull; Sessions: {{sessionsCount}}</p>
+    <p><a href="/courses/{{id}}" class="btn">View &amp; Book</a></p>
+  </article>
+  {{/courses}}
+
+  {{^courses}}
+    <p>No courses available yet.</p>
+  {{/courses}}
+</div>
+
+{{> footer}}

@@ -1,0 +1,19 @@
+{{> head}}
+{{> header}}
+
+<article>
+  <h1>Book Session</h1>
+  <p class="muted"><a href="/courses/{{course.id}}">{{course.title}}</a></p>
+  <p>Date: {{session.start}} &ndash; {{session.end}}</p>
+  <p>Places remaining: <strong>{{session.remaining}}</strong></p>
+
+  <form method="post" action="/sessions/{{session.id}}/book">
+    <input type="hidden" name="userId" value="{{user._id}}">
+    <div class="actions">
+      <button class="btn primary" type="submit">Confirm Session Booking</button>
+      <a href="/courses/{{course.id}}" class="btn">Cancel</a>
+    </div>
+  </form>
+</article>
+
+{{> footer}}

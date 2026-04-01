@@ -1,0 +1,68 @@
+{{> head}}
+{{> header}}
+
+<h1>All Courses</h1>
+
+<section class="filters">
+  <form method="get" action="/courses">
+    <div class="filter-row">
+      <label>
+        Level
+        <select name="level">
+          <option value="" {{^filters.level}}selected{{/filters.level}}>Any</option>
+          <option value="beginner" {{#filters.isLevelBeginner}}selected{{/filters.isLevelBeginner}}>Beginner</option>
+          <option value="intermediate" {{#filters.isLevelIntermediate}}selected{{/filters.isLevelIntermediate}}>Intermediate</option>
+          <option value="advanced" {{#filters.isLevelAdvanced}}selected{{/filters.isLevelAdvanced}}>Advanced</option>
+        </select>
+      </label>
+
+      <label>
+        Type
+        <select name="type">
+          <option value="" {{^filters.type}}selected{{/filters.type}}>Any</option>
+          <option value="WEEKLY_BLOCK" {{#filters.isTypeWeekly}}selected{{/filters.isTypeWeekly}}>Weekly Block</option>
+          <option value="WEEKEND_WORKSHOP" {{#filters.isTypeWeekend}}selected{{/filters.isTypeWeekend}}>Weekend Workshop</option>
+        </select>
+      </label>
+
+      <label>
+        Drop-in
+        <select name="dropin">
+          <option value="" {{^filters.dropin}}selected{{/filters.dropin}}>Any</option>
+          <option value="yes" {{#filters.isDropinYes}}selected{{/filters.isDropinYes}}>Yes</option>
+          <option value="no" {{#filters.isDropinNo}}selected{{/filters.isDropinNo}}>No</option>
+        </select>
+      </label>
+
+      <label>
+        Search
+        <input type="search" name="q" value="{{filters.q}}" placeholder="Title or description" />
+      </label>
+
+      <button class="btn" type="submit">Apply</button>
+      <a href="/courses" class="btn">Reset</a>
+    </div>
+  </form>
+</section>
+
+<div class="cards">
+  {{#courses}}
+  <article class="card">
+    <h2><a href="/courses/{{id}}">{{title}}</a></h2>
+    <p class="muted">
+      Level: {{level}} &bull; Type: {{type}} {{#allowDropIn}}&bull; Drop-in OK{{/allowDropIn}}
+    </p>
+    <p>{{description}}</p>
+    <p class="muted">Dates: {{startDate}} &ndash; {{endDate}}</p>
+    <p class="muted">Location:  {{location}} &bull; Price: {{price}}</p>
+    <p class="muted">Next session: {{nextSession}} &bull; Sessions: {{sessionsCount}}</p>
+    <p><a href="/courses/{{id}}" class="btn">View &amp; Book</a></p>
+  </article>
+  {{/courses}}
+
+  {{^courses}}
+    <p>No courses match your filters.</p>
+  {{/courses}}
+</div>
+
+{{> footer}}

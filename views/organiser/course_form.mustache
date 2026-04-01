@@ -1,0 +1,70 @@
+{{> head}}
+{{> header}}
+
+<h1>{{title}}</h1>
+
+{{#error}}
+<div class="alert error">{{error}}</div>
+{{/error}}
+
+<form method="post" action="{{#course}}/organiser/courses/{{id}}/edit{{/course}}{{^course}}/organiser/courses{{/course}}">
+  <div class="field">
+    <label for="title">Course Title</label>
+    <input type="text" id="title" name="title" required value="{{course.title}}">
+  </div>
+
+  <div class="field">
+    <label for="description">Description</label>
+    <textarea id="description" name="description" rows="4">{{course.description}}</textarea>
+  </div>
+
+  <div class="field">
+    <label for="level">Level</label>
+    <select id="level" name="level">
+      <option value="beginner">Beginner</option>
+      <option value="intermediate">Intermediate</option>
+      <option value="advanced">Advanced</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="type">Type</label>
+    <select id="type" name="type">
+      <option value="WEEKLY_BLOCK">Weekly Block</option>
+      <option value="WEEKEND_WORKSHOP">Weekend Workshop</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>
+      <input type="checkbox" name="allowDropIn" {{#course.allowDropIn}}checked{{/course.allowDropIn}}> Allow Drop-in
+    </label>
+  </div>
+
+  <div class="field">
+    <label for="startDate">Start Date</label>
+    <input type="date" id="startDate" name="startDate" value="{{course.startDate}}">
+  </div>
+
+  <div class="field">
+    <label for="endDate">End Date</label>
+    <input type="date" id="endDate" name="endDate" value="{{course.endDate}}">
+  </div>
+
+  <div class="field">
+    <label for="price">Price (£)</label>
+    <input type="number" id="price" name="price" min="0" step="0.01" value="{{course.price}}">
+  </div>
+
+  <div class="field">
+    <label for="location">Location</label>
+    <input type="text" id="location" name="location" value="{{course.location}}">
+  </div>
+
+  <div class="actions">
+    <button type="submit" class="btn primary">Save Course</button>
+    <a href="/organiser" class="btn">Cancel</a>
+  </div>
+</form>
+
+{{> footer}}

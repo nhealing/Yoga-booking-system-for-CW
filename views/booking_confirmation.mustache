@@ -1,0 +1,26 @@
+{{> head}}
+{{> header}}
+
+<article>
+  <h1>Booking Confirmed!</h1>
+  <p>Your booking has been created successfully.</p>
+
+  <dl class="kv">
+    <dt>Booking ID</dt><dd>{{booking.id}}</dd>
+    <dt>Type</dt><dd>{{booking.type}}</dd>
+    <dt>Status</dt>
+    <dd>
+      {{#booking.isConfirmed}}✅ Confirmed{{/booking.isConfirmed}}
+      {{#booking.isWaitlisted}}⏳ Waitlisted{{/booking.isWaitlisted}}
+      {{^booking.isConfirmed}}{{^booking.isWaitlisted}}{{booking.status}}{{/booking.isWaitlisted}}{{/booking.isConfirmed}}
+    </dd>
+    <dt>Created</dt><dd>{{booking.createdAt}}</dd>
+  </dl>
+
+  <div class="actions">
+    <a href="/courses" class="btn primary">Browse more courses</a>
+    <a href="/" class="btn">Home</a>
+  </div>
+</article>
+
+{{> footer}}

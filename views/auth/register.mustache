@@ -1,0 +1,29 @@
+{{> head}}
+{{> header}}
+<main class="wrap">
+  <h1>Create an Account</h1>
+
+  {{#error}}
+  <div class="alert error">{{ error }}</div>
+  {{/error}}
+
+  <form method="post" action="/auth/register">
+    <div class="field">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    <div class="field">
+      <label for="pass">Password (min 8 characters)</label>
+      <input type="password" id="pass" name="pass" minlength="8" required />
+    </div>
+    <div class="actions">
+      <button class="btn primary" type="submit">Register</button>
+      <a href="/auth/login">Already have an account? Sign in</a>
+    </div>
+  </form>
+</main>
+{{> footer}}

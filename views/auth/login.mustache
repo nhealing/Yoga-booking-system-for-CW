@@ -1,0 +1,25 @@
+{{> head}}
+{{> header}}
+<main class="wrap">
+  <h1>Sign In</h1>
+
+  {{#error}}
+  <div class="alert error">{{ error }}</div>
+  {{/error}}
+
+  <form method="post" action="/auth/login">
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+    </div>
+    <div class="actions">
+      <button class="btn primary" type="submit">Sign In</button>
+      <a href="/auth/register">Need an account? Register</a>
+    </div>
+  </form>
+</main>
+{{> footer}}

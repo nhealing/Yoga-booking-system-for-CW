@@ -1,0 +1,32 @@
+{{> head}}
+{{> header}}
+
+<h1>Organiser Dashboard</h1>
+<p>Welcome, {{user.name}}</p>
+
+<div class="actions" style="margin-bottom: 1rem;">
+  <a href="/organiser/courses/new" class="btn primary">+ Add New Course</a>
+  <a href="/organiser/users" class="btn">Manage Users</a>
+</div>
+
+<h2>All Courses</h2>
+{{#courses}}
+<div class="card" style="margin-bottom: 1rem; padding: 1rem; border: 1px solid #ddd;">
+  <h3>{{title}}</h3>
+  <p class="muted">Level: {{level}} &bull; Type: {{type}} &bull; Sessions: {{sessionsCount}}</p>
+  <div class="actions">
+    <a href="/organiser/courses/{{id}}/edit" class="btn">Edit</a>
+    <a href="/organiser/courses/{{id}}/sessions" class="btn">Sessions</a>
+    <a href="/organiser/courses/{{id}}/classlist" class="btn">Class List</a>
+    <form method="post" action="/organiser/courses/{{id}}/delete" style="display:inline">
+      <button type="submit" class="btn" onclick="return confirm('Delete this course?')">Delete</button>
+    </form>
+  </div>
+</div>
+{{/courses}}
+
+{{^courses}}
+<p>No courses yet. <a href="/organiser/courses/new">Add one</a>.</p>
+{{/courses}}
+
+{{> footer}}

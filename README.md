@@ -11,6 +11,10 @@ It was built using Node.js, Express, Mustache templates and NeDB.
 
 https://yoga-booking-system-for-cw.onrender.com/
 
+Note: The live site is hosted on Render.com free tier and may take 30-60 seconds to load on first visit.
+
+---
+
 ## How to run the project
 
 1. Install dependencies:
@@ -39,6 +43,8 @@ npm start
 
 http://localhost:3000
 
+---
+
 ### Test Accounts
 
 - Organiser  
@@ -46,32 +52,34 @@ http://localhost:3000
   Password: organiser123  
 
 - Student  
-   Email: fiona@student.local
-   Password: student123
+  Email: fiona@student.local  
+  Password: student123  
 
-  Or create a new account using the Register page
+Or create a new account using the Register page.
 
 ---
 
 ## Features implemented
 
 ### Public
-- View homepage with available courses  
-- Browse courses  
-- View course details and sessions  
+- View homepage with available courses
+- Browse and filter courses by level, type and drop-in availability
+- Search courses by title or description
+- View course details, sessions, price and location
 
 ### Users
-- Register and login  
-- Book full courses  
-- Book individual sessions (if allowed)  
-- Booking confirmation  
+- Register and login
+- Book full courses
+- Book individual drop-in sessions where available
+- View booking confirmation with status
 
 ### Organiser
-- Organiser dashboard  
-- Add, edit and delete courses  
-- Manage sessions  
-- View class lists  
-- Manage users  
+- Organiser dashboard
+- Add, edit and delete courses including price and location
+- Add and delete sessions
+- View class lists with participant names and booking status
+- Add and delete organiser accounts
+- Remove user accounts
 
 ---
 
@@ -81,5 +89,6 @@ Run tests with:
 
 npm test
 
+Note: Make sure the server is not running before running tests.
 
-All tests should pass.
+All 21 tests should pass.

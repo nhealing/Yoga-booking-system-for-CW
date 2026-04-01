@@ -7,6 +7,10 @@ It was built using Node.js, Express, Mustache templates and NeDB.
 
 ---
 
+## Live Site
+
+https://yoga-booking-system-for-cw.onrender.com/
+
 ## How to run the project
 
 1. Install dependencies:

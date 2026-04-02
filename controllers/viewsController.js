@@ -48,6 +48,8 @@ export const homePage = async (req, res, next) => {
           nextSession: nextSession ? fmtDate(nextSession.startDateTime) : "TBA",
           sessionsCount: sessions.length,
           description: c.description,
+          price: c.price ? `£${c.price}` : "Contact us for pricing", 
+          location: c.location || "Location TBC", 
         };
       })
     );
